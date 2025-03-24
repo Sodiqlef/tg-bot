@@ -1,7 +1,9 @@
+from dotenv import load_dotenv
 import aiohttp
+import os
 from telegram.ext import Application, CommandHandler
 
-TOKEN = '7595652763:AAF3PO7XzZ3S7pteOyrha_7Dwv-PF4kxAoo'
+TOKEN = os.getenv("TELEGRAM_BOT_TOKEN") 
 COINGECKO_API_URL = "https://api.coingecko.com/api/v3/coins/solana/contract/"
 
 async def start(update, context):
